@@ -49,7 +49,7 @@ class _listaPersonajesState extends State<listaPersonajes> {
         ClipRRect(
           borderRadius: BorderRadius.circular(18),
           child: Image.asset("assets/$image",
-          width: widthPantalla*0.30,
+          width: widthPantalla*0.29,
           height: 110,
           fit: BoxFit.cover,),
         ),
