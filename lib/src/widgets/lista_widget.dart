@@ -43,8 +43,9 @@ class _listaPersonajesState extends State<listaPersonajes> {
             height: 10,
           ),
           bloquePersonajes("Mr. Poch                                ☰", 0xff87CEEB, "Poch"),
+          bloquePersonajes("Petrovic                                ☰", 0xff00FFFF, "petro"),
           bloquePersonajes("Gusto                                   ☰", 0xff00FFFF, "malo"),
-          bloquePersonajes("Disasi                                  ☰", 0xffffffff, "disai"),
+          bloquePersonajes("Disasi                                  ☰", 0xffffffff, "disasi"),
           bloquePersonajes("Thiago                                  ☰", 0xff87CEEB, "thiago"),
           bloquePersonajes("Chilly                                  ☰", 0xff00FFFF, "ben"),
           bloquePersonajes("Moi                                     ☰", 0xffffffff, "moi"),
@@ -63,7 +64,7 @@ class _listaPersonajesState extends State<listaPersonajes> {
     return GestureDetector(
         onTap: () {
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => DetailPage()));
+              .push(MaterialPageRoute(builder: (context) => DetailPage(color: color,image: "assets/$imagen.png",)));
         },
         child: Container(
           margin: const EdgeInsets.only(bottom: 20),
@@ -87,7 +88,7 @@ class _listaPersonajesState extends State<listaPersonajes> {
                           color: Color(color))
                     ], borderRadius: BorderRadius.circular(20)),
                     padding: const EdgeInsets.all(8),
-                    child: Image.asset("assets/$imagen.jpg"),
+                    child: Image.asset("assets/$imagen.png"),
                   ),
                   const SizedBox(
                     width: 12,
