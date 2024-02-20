@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../pages/detail_page.dart';
+import 'package:flutter/cupertino.dart';
 
 class listaPersonajes extends StatefulWidget {
   const listaPersonajes({super.key});
@@ -42,19 +43,19 @@ class _listaPersonajesState extends State<listaPersonajes> {
           const SizedBox(
             height: 10,
           ),
-          bloquePersonajes("Mr. Poch                                ☰", 0xff87CEEB, "Poch"),
-          bloquePersonajes("Petrovic                                ☰", 0xff00FFFF, "petro"),
-          bloquePersonajes("Gusto                                   ☰", 0xff00FFFF, "malo"),
-          bloquePersonajes("Disasi                                  ☰", 0xffffffff, "disasi"),
-          bloquePersonajes("Thiago                                  ☰", 0xff87CEEB, "thiago"),
-          bloquePersonajes("Chilly                                  ☰", 0xff00FFFF, "ben"),
-          bloquePersonajes("Moi                                     ☰", 0xffffffff, "moi"),
-          bloquePersonajes("Enzo                                    ☰", 0xff87CEEB, "enzo"),
-          bloquePersonajes("Connor                                  ☰", 0xff00FFFF, "connor"),
-          bloquePersonajes("Cold Palmer                             ☰", 0xffffffff, "cold"),
-          bloquePersonajes("Sterling                                ☰", 0xff87CEEB, "ster"),
-          bloquePersonajes("Jackson                                 ☰", 0xff00FFFF, "nicolas"),
-          bloquePersonajes("Nkunku                                  ☰", 0xffffffff, "nkunku"),
+          bloquePersonajes("Pochettino M.", 0xff87CEEB, "Poch"),
+          bloquePersonajes("Petrovic D.", 0xff00FFFF, "petro"),
+          bloquePersonajes("Gusto M.", 0xff00FFFF, "malo"),
+          bloquePersonajes("Disasi A.", 0xffffffff, "disasi"),
+          bloquePersonajes("Thiago S.", 0xff87CEEB, "thiago"),
+          bloquePersonajes("Chillwel B.", 0xff00FFFF, "ben"),
+          bloquePersonajes("Moises C.", 0xffffffff, "moi"),
+          bloquePersonajes("Enzo F.", 0xff87CEEB, "enzo"),
+          bloquePersonajes("Connor G.", 0xff00FFFF, "connor"),
+          bloquePersonajes("Palmer C.", 0xffffffff, "cold"),
+          bloquePersonajes("Sterling R.", 0xff87CEEB, "ster"),
+          bloquePersonajes("Jackson N.", 0xff00FFFF, "nicolas"),
+          bloquePersonajes("Nkunku C.", 0xffffffff, "nkunku"),
         ],
       ),
     );
@@ -62,9 +63,14 @@ class _listaPersonajesState extends State<listaPersonajes> {
 
   Widget bloquePersonajes(String nombre, int color, String imagen) {
     return GestureDetector(
-        onTap: () {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => DetailPage(color: color,image: "assets/$imagen.png",)));
+        onTap: ()=> {
+          Navigator.of(context).push
+            (CupertinoPageRoute(
+                builder: (context) => DetailPage(
+                    color: color,
+                    image: "assets/$imagen.png",
+                    nombre: nombre,
+                  )))
         },
         child: Container(
           margin: const EdgeInsets.only(bottom: 20),
@@ -88,7 +94,7 @@ class _listaPersonajesState extends State<listaPersonajes> {
                           color: Color(color))
                     ], borderRadius: BorderRadius.circular(20)),
                     padding: const EdgeInsets.all(8),
-                    child: Image.asset("assets/$imagen.png"),
+                    child: Hero(tag: color, child: Image.asset("assets/$imagen.png")),
                   ),
                   const SizedBox(
                     width: 12,
@@ -98,10 +104,15 @@ class _listaPersonajesState extends State<listaPersonajes> {
                     style: const TextStyle(fontSize: 16, color: Colors.white),
                   )
                 ],
-              )
+              ),
+              IconButton(
+                onPressed: (){}, 
+                icon: const Icon(Icons.more_vert_rounded),
+                color: Colors.grey,
+                )
             ],
           ),
-        ));
+        ),);
   }
 
   Column bloquesPortada(String image, String titulo, String subTitulo) {
