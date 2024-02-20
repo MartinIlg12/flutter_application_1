@@ -23,7 +23,7 @@ class Headerwidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text("Chelsea Fc", style: tituloTextStyle,),
-          Text("Jugadores", style: subTituloTextStyle,),
+          Text("Fan Page Oficial", style: subTituloTextStyle,),
         ],
         ),
         Row(

@@ -20,6 +20,11 @@ class _HomeState extends State<Home> {
           listaPersonajes()
         ],
         ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: Icon(Icons.add),
+          backgroundColor: Color.fromARGB(255, 4, 41, 250)
+        ),
     );
   }
 }
