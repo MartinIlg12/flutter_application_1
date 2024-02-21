@@ -97,22 +97,30 @@ class _DetailPageState extends State<DetailPage> {
                 ),
               ),
               const Spacer(),
-              Container(
-                width: double.infinity,
-                height: 40,
-                alignment: Alignment.center,
-                margin: const EdgeInsets.symmetric(horizontal: 8),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Color(widget.color)),
-                child: const Text(
-                  "Volver",
-                  style: TextStyle(
-                      color: Color.fromARGB(255, 255, 255, 255),
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold),
-                ),
-              )
+              GestureDetector(
+  onTap: () {
+    Navigator.pop(context);
+  },
+  child: Container(
+    width: double.infinity,
+    height: 40,
+    alignment: Alignment.center,
+    margin: const EdgeInsets.symmetric(horizontal: 8),
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(10),
+      color: Color(widget.color),
+    ),
+    child: const Text(
+      "Volver",
+      style: TextStyle(
+        color: Color.fromARGB(255, 255, 255, 255),
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+  ),
+)
+
             ],
           ),
         ));
