@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/src/animations/fade_animations.dart';
 import '../widgets/blur_container.dart';
 import '../widgets/infotitle_widget.dart';
 
@@ -45,8 +46,9 @@ class _DetailPageState extends State<DetailPage> {
                   Positioned(
                     bottom: 10,
                     left: 10,
-                    child: BlurContainer(
-                        child: Container(
+                    child: FadeAnimation(
+                      intervalEnd: 0.8,
+                        child: BlurContainer(child: Container(
                       width: 160,
                       height: 50,
                       alignment: Alignment.center,
@@ -61,6 +63,7 @@ class _DetailPageState extends State<DetailPage> {
                       ),
                     )),
                   )
+                  )
                 ],
               ),
               const SizedBox(
@@ -68,21 +71,26 @@ class _DetailPageState extends State<DetailPage> {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: Text("${widget.nombre}",
-                  style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold),
+                child: FadeAnimation(
+                  intervalStart: 0.3,
+                  child: Text("${widget.nombre}",
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold),
                 ),
-              ),
+              ),),
+              
               const SizedBox(height: 20),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8.0),
+                child: FadeAnimation(
+                  intervalStart: 0.35,
                 child: Text(
                   "Chelsea Fc",
                   style: TextStyle(color: Colors.white70),
                 ),
-              ),
+              ),),
               const SizedBox(
                 height: 40,
               ),
