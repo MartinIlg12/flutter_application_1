@@ -44,18 +44,18 @@ class _listaPersonajesState extends State<listaPersonajes> {
             height: 10,
           ),
           bloquePersonajes("Pochettino M.", 0xff87CEEB, "Poch"),
-          bloquePersonajes("Petrovic D.", 0xff00FFFF, "petro"),
-          bloquePersonajes("Gusto M.", 0xff00FFFF, "malo"),
-          bloquePersonajes("Disasi A.", 0xffffffff, "disasi"),
-          bloquePersonajes("Thiago S.", 0xff87CEEB, "thiago"),
-          bloquePersonajes("Chillwel B.", 0xff00FFFF, "ben"),
-          bloquePersonajes("Moises C.", 0xffffffff, "moi"),
-          bloquePersonajes("Enzo F.", 0xff87CEEB, "enzo"),
-          bloquePersonajes("Connor G.", 0xff00FFFF, "connor"),
-          bloquePersonajes("Palmer C.", 0xffffffff, "cold"),
-          bloquePersonajes("Sterling R.", 0xff87CEEB, "ster"),
-          bloquePersonajes("Jackson N.", 0xff00FFFF, "nicolas"),
-          bloquePersonajes("Nkunku C.", 0xffffffff, "nkunku"),
+          bloquePersonajes("Petrovic D.", 0xff01FFFF, "petro"),
+          bloquePersonajes("Gusto M.", 0xff02FFFF, "malo"),
+          bloquePersonajes("Disasi A.", 0xff03FFFF, "disasi"),
+          bloquePersonajes("Thiago S.", 0xff04FFFF, "thiago"),
+          bloquePersonajes("Chillwel B.", 0xff05FFFF, "ben"),
+          bloquePersonajes("Moises C.", 0xff06FFFF, "moi"),
+          bloquePersonajes("Enzo F.", 0xff07FFFF, "enzo"),
+          bloquePersonajes("Connor G.", 0xff08FFFF, "connor"),
+          bloquePersonajes("Palmer C.", 0xff09FFFF, "cold"),
+          bloquePersonajes("Sterling R.", 0xff10FFFF, "ster"),
+          bloquePersonajes("Jackson N.", 0xff11FFFF, "nicolas"),
+          bloquePersonajes("Nkunku C.", 0xff12FFFF, "nkunku"),
         ],
       ),
     );
@@ -64,8 +64,8 @@ class _listaPersonajesState extends State<listaPersonajes> {
   Widget bloquePersonajes(String nombre, int color, String imagen) {
     return GestureDetector(
         onTap: ()=> {
-          Navigator.of(context).push
-            (CupertinoPageRoute(
+          Navigator.of(context).push(
+            CupertinoPageRoute(
                 builder: (context) => DetailPage(
                     color: color,
                     image: "assets/$imagen.png",
@@ -94,7 +94,7 @@ class _listaPersonajesState extends State<listaPersonajes> {
                           color: Color(color))
                     ], borderRadius: BorderRadius.circular(20)),
                     padding: const EdgeInsets.all(8),
-                    child: Hero(tag: color, child: Image.asset("assets/$imagen.png")),
+                    child: Hero(tag: color, child: Image.asset("assets/$imagen.png"),),
                   ),
                   const SizedBox(
                     width: 12,
