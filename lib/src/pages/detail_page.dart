@@ -64,7 +64,7 @@ class _DetailPageState extends State<DetailPage> {
                 ],
               ),
               const SizedBox(
-                height: 10,
+                height: 20,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -75,7 +75,7 @@ class _DetailPageState extends State<DetailPage> {
                       fontWeight: FontWeight.bold),
                 ),
               ),
-              const SizedBox(height: 5),
+              const SizedBox(height: 20),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8.0),
                 child: Text(
@@ -84,7 +84,7 @@ class _DetailPageState extends State<DetailPage> {
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 40,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
